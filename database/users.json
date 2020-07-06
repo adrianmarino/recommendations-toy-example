@@ -1,0 +1,37 @@
+[
+    {
+        "email": "adrian.marino@almundo.com",
+        "realm": "ALMUNDO-ALMUNDO-EMPLOYEE",
+        "id": 1
+    },
+    {
+        "email": "juanmanuel.bouvier@almundo.com",
+        "realm": "ALMUNDO-ALMUNDO-EMPLOYEE",
+        "id": 2
+    },
+    {
+        "email": "sofia.massobrio@almundo.com",
+        "realm": "ALMUNDO-ALMUNDO-EMPLOYEE",
+        "id": 3
+    },
+    {
+        "email": "facundo.etchanchu@almundo.com",
+        "realm": "ALMUNDO-ALMUNDO-EMPLOYEE",
+        "id": 4
+    },
+    {
+        "email": "kevin.klaus@almundo.com",
+        "realm": "ALMUNDO-ALMUNDO-EMPLOYEE",
+        "id": 5
+    },
+    {
+        "email": "gonzalo.prieto@almundo.com",
+        "realm": "ALMUNDO-ALMUNDO-EMPLOYEE",
+        "id": 6
+    },
+    {
+        "email": "diego.saez@almundo.com",
+        "realm": "ALMUNDO-ALMUNDO-EMPLOYEE",
+        "id": 7
+    }
+]

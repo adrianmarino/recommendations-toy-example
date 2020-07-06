@@ -1,0 +1,30 @@
+[
+    {
+        "code": "AF",
+        "name": "Africa"
+    },
+    {
+        "code": "CB",
+        "name": "El caribe"
+    },
+    {
+        "code": "CA",
+        "name": "Centro America"
+    },
+    {
+        "code": "EU",
+        "name": "Europa"
+    },
+    {
+        "code": "NA",
+        "name": "Norte America"
+    },
+    {
+        "code": "OC",
+        "name": "Oceania"
+    },
+    {
+        "code": "SA",
+        "name": "Sub America"
+    }
+]

@@ -1,0 +1,13 @@
+name: neo4j-recomendations
+channels:
+- anaconda
+- conda-forge
+- defaults
+dependencies:
+    - tqdm
+    - ipywidgets
+    - widgetsnbextension
+    - jupyterlab
+    - pandas
+    - pip:
+        - neo4j
