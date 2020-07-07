@@ -3,7 +3,7 @@
 2. disable SERVER authentication:
      1. `vim /etc/conf/neo4j.conf`
      2. Change `dbms.security.auth_enabled=false`
-3. `sudo systemctl start neo4j`
+3. `sudo systemctl restart neo4j`
 
 ### Setup project
 3. `conda env create -f environment.yml`
