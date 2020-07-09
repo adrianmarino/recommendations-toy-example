@@ -14,7 +14,7 @@ yay -S neo4j-community
 
 1. Edit config file:
 ```bash
-vim /etc/conf/neo4j.conf`
+vim /etc/conf/neo4j.conf
 ```
 2. Change `dbms.security.auth_enabled` to `false`.
 
