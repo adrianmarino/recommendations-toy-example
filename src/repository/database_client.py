@@ -4,7 +4,9 @@ import pandas as pd
 
     
 def to_table(result, columns):
-    return pd.DataFrame([[row[c] for c in columns] for row in result], columns=columns)
+    df = pd.DataFrame([[row[c] for c in columns] for row in result], columns=columns)
+    df.columns = map(str.upper, df.columns)
+    return df 
 
 class DatabaseClient:
     def __init__(self, uri, user, password):
