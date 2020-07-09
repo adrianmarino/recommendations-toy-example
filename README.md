@@ -4,32 +4,10 @@ A toy example.
 
 ### Requirements
 
+* Any linux distro
 * [conda](https://www.anaconda.com/products/individual)
 
-### Install database
-
-**Step 1**: Install neo4j-community package (Archlinux): 
-
-```bash
-yay -S neo4j-community
-```
-
-**Step 2**: Disable SERVER authentication.
-
-1. Edit config file:
-```bash
-vim /etc/conf/neo4j.conf
-```
-2. Change `dbms.security.auth_enabled` to `false`.
-
-**Step 3**: Start server.
-
-```bash
-sudo systemctl restart neo4j
-```
-
 ### Setup project
-
 
 **Step 1**: Create conda environment to run project notebook.
 
@@ -40,7 +18,7 @@ conda env create -f environment.yml
 **Step 2**: Enable installed environment.
 
 ```bash
-conda activate neo4j-recomendations
+conda activate tourism-recommendation-system
 ```
 
 **Step 3**: Install a upyter extension required to support a progress bar in a notebook.
@@ -54,7 +32,7 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager
 **Step 1**: Enable installed environment.
 
 ```bash
-conda activate neo4j-recomendations
+conda activate tourism-recommendation-system
 ```
 
 **Step 2**: run jypiter lab IDE:
