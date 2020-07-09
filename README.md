@@ -2,6 +2,10 @@
 
 A toy example.
 
+### Requirements
+
+* [conda](https://www.anaconda.com/products/individual)
+
 ### Install database
 
 **Step 1**: Install neo4j-community package (Archlinux): 
