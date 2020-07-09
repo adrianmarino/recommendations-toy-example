@@ -59,4 +59,6 @@ conda activate neo4j-recomendations
 jupyter lab
 ```
 
+**Step 3**: Open [toy-example](toy-example.ipynb) jypiter notebook.
+
 **Note**: Can use query browser from http://localhost:7474.
