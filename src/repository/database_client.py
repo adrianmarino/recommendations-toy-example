@@ -28,8 +28,8 @@ class DatabaseClient:
     
     def run(self, query):
         with self.session() as session:
-            return session.read_transaction(lambda tx: tx.run(query))
-    
+            session.read_transaction(lambda tx: tx.run(query))
+
     def query(self, query_fn):
         with self.session() as session:
             return session.read_transaction(query_fn)
