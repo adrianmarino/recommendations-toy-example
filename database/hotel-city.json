@@ -1,0 +1,50 @@
+[
+    {
+        "hotel_id": "1",
+        "city_code": "MIA"
+    },
+    {
+        "hotel_id": "2",
+        "city_code": "MIA"
+    },
+    {
+        "hotel_id": "3",
+        "city_code": "MIA"
+    },
+    {
+        "hotel_id": "4",
+        "city_code": "BCN"
+    },
+    {
+        "hotel_id": "5",
+        "city_code": "BCN"
+    },
+    {
+        "hotel_id": "6",
+        "city_code": "BCN"
+    },
+    {
+        "hotel_id": "7",
+        "city_code": "SLA"
+    },
+    {
+        "hotel_id": "8",
+        "city_code": "SLA"
+    },
+    {
+        "hotel_id": "9",
+        "city_code": "SLA"
+    },
+    {
+        "hotel_id": "10",
+        "city_code": "RIO"
+    },
+    {
+        "hotel_id": "11",
+        "city_code": "RIO"
+    },
+    {
+        "hotel_id": "12",
+        "city_code": "RIO"
+    }
+]

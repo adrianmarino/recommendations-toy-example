@@ -1,6 +1,8 @@
 from collections import namedtuple
 
-City = namedtuple('City', 'id iata_code name')
-Country = namedtuple('Country', 'id code name')
+City = namedtuple('City', 'code name')
+Country = namedtuple('Country', 'code name')
 Region = namedtuple('Region', 'code name')
+Airline = namedtuple('Airline', 'code name')
+Hotel = namedtuple('Hotel', 'id name')
 User = namedtuple('User', 'id email realm')

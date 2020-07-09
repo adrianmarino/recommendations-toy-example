@@ -1,0 +1,38 @@
+[
+    {
+        "code": "AA",
+        "name": "American Airlines"
+    },
+    {
+        "code": "AR",
+        "name": "Aerolines Argentinas"
+    },
+    {
+        "code": "EK",
+        "name": "Emirates"
+    },
+    {
+        "code": "LA",
+        "name": "LATAM"
+    },
+    {
+        "code": "LH",
+        "name": "Lufthansa"
+    },
+    {
+        "code": "AF",
+        "name": "Air France"
+    },
+    {
+        "code": "AZ",
+        "name": "Alitalia"
+    },
+    {
+        "code": "AM",
+        "name": "Aeromexico"
+    },
+    {
+        "code": "QA",
+        "name": "Qantas Airways"
+    }
+]

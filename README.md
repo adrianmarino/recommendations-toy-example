@@ -1,3 +1,7 @@
+# Tourism recommendation system
+
+A toy example.
+
 ### Install database
 1. `yay -S neo4j-community`
 2. disable SERVER authentication:
@@ -15,5 +19,5 @@
 
 1. `conda activate neo4j-recomendations`
 2. `jupyter lab`
-3. Open **toy-example.ipynb** notebook.
+3. Open [Jupyter Notebook](toy-example.ipynb).
 4. Query browser: http://localhost:7474

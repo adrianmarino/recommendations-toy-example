@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "name": "Madagascar Palace"
+    },
+    {
+        "id": "2",
+        "name": "See Palace Resort"
+    },
+    {
+        "id": "3",
+        "name": "Beach Palace Resort"
+    },
+    {
+        "id": "4",
+        "name": "Barcelona Hotel"
+    },
+    {
+        "id": "5",
+        "name": "Malaga Hotel Resort"
+    },
+    {
+        "id": "6",
+        "name": "Hotel Imperial"
+    },
+    {
+        "id": "7",
+        "name": "Hotel procincial"
+    },
+    {
+        "id": "8",
+        "name": "Posada Santana"
+    },
+    {
+        "id": "9",
+        "name": "El rincon del descanso"
+    },
+    {
+        "id": "10",
+        "name": "Rio See Resort"
+    },
+    {
+        "id": "11",
+        "name": "Pipa Hotel"
+    },
+    {
+        "id": "12",
+        "name": "Hakuna Matata Hotel Bar"
+    }
+]

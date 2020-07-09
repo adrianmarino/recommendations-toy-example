@@ -1,5 +1,5 @@
 from .json_utils import load_json
-from .repository import City, Country, Region, User
+from .repository import City, Country, Region, User, Airline, Hotel
 from abc import ABC, abstractmethod
     
 class Repository(ABC):
@@ -36,27 +36,19 @@ class Mapper(ABC):
 
 class CityMapper(Mapper):
     def _mapping(self, entity):
-        return City(
-            id=entity['id'], 
-            name=entity['name']['es'], 
-            iata_code=entity['iata_code']
-        )
-
-class CityFilter(Filter):
-    def _condition(self, entity):
-        return have_fields(entity, ['id', 'name', 'iata_code']) and have_fields(entity['name'], ['es'])
-
-class CountryFilter(Filter):
-    def _condition(self, entity):
-        code = entity['iso3166']
-        name = entity['name']
-        return have_fields(entity, ['id', 'name', 'iso3166']) \
-            and name != None and 'es' in name \
-            and code != None and 'alpha3' in code
+        return City(code=entity['code'], name=entity['name'])
 
 class RegionMapper(Mapper):
     def _mapping(self, entity):
         return Region(code=entity['code'], name=entity['name'])
+
+class HotelMapper(Mapper):
+    def _mapping(self, entity):
+        return Hotel(id=entity['id'], name=entity['name'])
+
+class AirlineMapper(Mapper):
+    def _mapping(self, entity):
+        return Airline(code=entity['code'], name=entity['name'])
 
 class UserMapper(Mapper):
     def _mapping(self, entity):
@@ -68,7 +60,7 @@ class UserMapper(Mapper):
     
 class CountryMapper(Mapper):
     def _mapping(self, entity): 
-        return Country(id=entity['id'], name=entity['name']['es'], code=entity['iso3166']['alpha3'])
+        return Country(code=entity['code'], name=entity['name'])
 
 
 class EntityLoader:
