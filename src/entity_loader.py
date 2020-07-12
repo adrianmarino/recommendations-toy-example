@@ -1,7 +1,9 @@
+from abc import ABC, abstractmethod
+
 from .json_utils import load_json
 from .repository import City, Country, Region, User, Airline, Hotel
-from abc import ABC, abstractmethod
-    
+
+
 class Repository(ABC):
     def __init__(self, client): self.__client = client
     def __perform(records, query_fn): self.__client.bulk_update(records, query_fn)

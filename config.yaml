@@ -1,0 +1,124 @@
+api:
+  uri: /api/recommendations
+database:
+  username: neo4j
+  password: neo4j
+  url: bolt://localhost:7687
+queries:
+  hotels_by_flight_destination_for_purchaser_user: >
+    MATCH
+      (u:User {email: '%s'})
+
+        -[up:PURCHASE]->(:FlightReservation)
+        -[:TO_LOCATION]->
+
+      (c:City)
+
+          <-[:LOCATED_IN]-(h:Hotel)
+          <-[:TO_STAY_IN]-(hr:HotelReservation)
+          <-[op:PURCHASE]-
+
+      (ou:User)
+            WHERE
+                ou <> u
+                AND up.datetime >= (datetime() - duration('P%sD'))
+                AND op.datetime >= (datetime() - duration('P%sD'))
+            WITH
+                c.code as city,
+                h._id as id,
+                h.name as name,
+                REDUCE (sc=0, c in COLLECT(h) | sc+1 ) AS score
+            RETURN
+                city,
+                id,
+                name,
+                score
+            ORDER BY
+                score DESC
+            LIMIT 5
+  airlines_by_hotel_city_for_purchaser_user: >
+    MATCH
+      (u:User {email: '%s'})
+        -[up:PURCHASE]->(:HotelReservation)
+        -[:TO_STAY_IN]->(:Hotel)
+        -[:LOCATED_IN]->
+
+      (c:City)
+
+          <-[:TO_LOCATION]-(fr:FlightReservation)
+          <-[op:PURCHASE]-
+      (ou:User),
+        (fr)-[:TO_TRAVEL_WITH]->(a:Airline)
+            WHERE
+                ou <> u
+                AND up.datetime >= (datetime() - duration('P%sD'))
+                AND op.datetime >= (datetime() - duration('P%sD'))
+            WITH
+                c.code as destination,
+                a.name as name,
+                REDUCE (sc=0, c in COLLECT(a) | sc+1 ) AS score
+            RETURN
+                destination,
+                name,
+                score
+            ORDER BY
+                score DESC
+            LIMIT 5
+  more_purchased_flights: >
+      MATCH   (:User)-[p:PURCHASE]->
+              (r)-[:TO_LOCATION]->
+              (c:City),
+              (r)-[:TO_TRAVEL_WITH]->(a:Airline)
+      WHERE
+          p.datetime >= (datetime() - duration('P%sD'))
+      RETURN
+          COUNT(*) as score,
+          c.code as destination,
+          a.code as airline
+      ORDER BY
+          score DESC,
+          destination ASC,
+          airline ASC
+      LIMIT 5
+  more_purchased_hotels: >
+      MATCH   (:User)-[p:PURCHASE]->
+              (:HotelReservation)-[:TO_STAY_IN]->
+              (h:Hotel)-[:LOCATED_IN]->
+              (c:City)
+      WHERE
+          p.datetime >= (datetime() - duration('P%sD'))
+      RETURN
+          COUNT(*) as score,
+          c.code as destination,
+          h.name as name
+      ORDER BY
+          score DESC,
+          destination ASC
+      LIMIT 5
+
+  more_searched_flights: >
+    MATCH   (:User)-[s:SEARCHED]->
+            (e:FlightSearchEvent)-[:TO_LOCATION]->
+            (c:City)
+    WHERE
+        s.datetime >= (datetime() - duration('P%sD'))
+    RETURN
+        COUNT(*) as score,
+        c.code as destination
+    ORDER BY
+        score DESC,
+        destination ASC
+    LIMIT 5
+  more_searched_hotels: >
+    MATCH   (:User)-[s:SEARCHED]->
+            (e:HotelSearchEvent)-[:IN_LOCATION]->
+            (c:City)
+    WHERE
+        s.datetime >= (datetime() - duration('P%sD'))
+    RETURN
+        COUNT(*) as score,
+        c.code as destination
+    ORDER BY
+        score DESC,
+        destination ASC
+    LIMIT 5

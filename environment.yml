@@ -3,11 +3,14 @@ channels:
 - anaconda
 - conda-forge
 - defaults
+- bioconda
 dependencies:
     - tqdm
     - ipywidgets
     - widgetsnbextension
     - jupyterlab
     - pandas
+    - flask
+    - pyyaml
     - pip:
         - neo4j

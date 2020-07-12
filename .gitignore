@@ -139,3 +139,5 @@ cython_debug/
 
 neo4j.tar.gz
 nj/
+
+.idea/
