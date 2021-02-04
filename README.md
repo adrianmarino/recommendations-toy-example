@@ -41,7 +41,7 @@ conda activate tourism-recommendation-system
 jupyter lab
 ```
 
-**Step 3**: Open [toy-example](toy-example.ipynb) jypiter notebook.
+**Step 3**: Open [toy-example](toy-example.ipynb) jupyter notebook.
 
 **Note**: Can use query browser from http://localhost:7474.
 
